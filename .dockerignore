@@ -1,0 +1,15 @@
+node_modules
+**/node_modules
+.next
+**/.next
+dist
+**/dist
+.turbo
+**/*.tsbuildinfo
+.git
+*.log
+install.log
+build.log
+server.log
+out
+coverage

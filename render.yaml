@@ -1,0 +1,22 @@
+# render.yaml — Render Blueprint (additive deploy config, not part of upstream).
+# Native Node web service on Render's free plan. Render injects $PORT, which
+# the custom server already respects (packages/web/src/server/custom-server.ts).
+#
+# One-time setup in the Render dashboard: New > Blueprint > connect this repo.
+# Render auto-builds on every push to the deployed branch.
+services:
+  - type: web
+    name: brainos
+    runtime: node
+    plan: free
+    autoDeploy: true
+    buildCommand: npm ci && npm run build
+    startCommand: node deploy/register-brain.mjs && node packages/web/dist/server/custom-server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Brain content committed in the repo (relative to repo root at runtime).
+      - key: BRAIN_PATH
+        value: ./brain
+      - key: NODE_VERSION
+        value: "22"

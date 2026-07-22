@@ -1,0 +1,8 @@
+{
+  "id": "claude-os",
+  "name": "Claude OS",
+  "description": "Nil's Claude Code operating system — projects, agents, skills, plugins, MCP, and infra, as one navigable brain.",
+  "version": "0.1.0",
+  "created": "2026-07-22T00:00:00Z",
+  "updated": "2026-07-22T00:00:00Z"
+}
