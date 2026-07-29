@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "claude-code-studio": {
+      "source": {
+        "source": "github",
+        "repo": "nilpost/claude-code-studio"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "studio-core@claude-code-studio": true
+  }
+}
