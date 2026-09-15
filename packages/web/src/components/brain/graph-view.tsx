@@ -1,6 +1,11 @@
 'use client';
 
 import { useRef, useEffect, useCallback, useState, useMemo } from 'react';
+// d3-transition augments d3-selection's Selection with .transition().
+// TypeScript 7 no longer auto-includes @types packages hoisted to the
+// workspace root, so the augmentation must be imported explicitly or every
+// .transition() call fails to typecheck. Already loaded at runtime via d3-zoom.
+import 'd3-transition';
 import { select } from 'd3-selection';
 import {
   forceSimulation,

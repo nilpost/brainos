@@ -8,6 +8,10 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    // TypeScript 7 no longer auto-discovers @types packages hoisted to the
+    // workspace root, so Node globals (process, __dirname) and node: modules
+    // must be requested explicitly. Without this, tsc reports 21 errors here.
+    "types": ["node"],
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "declarationMap": true,
