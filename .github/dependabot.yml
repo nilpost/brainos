@@ -10,6 +10,12 @@ updates:
       production-dependencies:
         dependency-type: production
     open-pull-requests-limit: 10
+    ignore:
+      # chokidar 5+ is ESM-only and 6 requires Node >= 22.22. The web server
+      # compiles to CommonJS and the package supports Node >= 20, so a major
+      # bump fails the build. Remove this when dropping Node 20.
+      - dependency-name: chokidar
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /
